@@ -8,6 +8,7 @@ const userRoute = require("./api/routes/user");
 const buyerRoute = require("./api/routes/buyer");
 const sellerRoute = require("./api/routes/seller");
 const marketPriceRoute = require("./api/routes/marketPriceRoute");
+const transactionRoute = require("./api/routes/transaction");
 
 const password = process.env.MONGO_ATLAS_PW;
 const MONGOB_URI = `mongodb+srv://admin-aishwary:${password}@cluster0.j80mt.mongodb.net/stockMarketDatabase?retryWrites=true&w=majority`;
@@ -60,6 +61,7 @@ app.use("/stockMarket/user", userRoute);
 app.use("/stockMarket/seller", sellerRoute);
 app.use("/stockMarket/buyer", buyerRoute);
 app.use("/stockMarket/marketPrice", marketPriceRoute);
+app.use("/stockMarket/transaction", transactionRoute);
 
 //if the request are not go in any route
 app.use((req, res, next) => {
